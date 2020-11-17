@@ -14,6 +14,7 @@ export class AppComponent {
     inputFilter: ['', [Validators.required]]
   });
   filter: string;
+  products: [];
   constructor(private formBuilder: FormBuilder,
     private servicesProductsService: ServicesProductsService) {
     registerLocaleData(localeCL);
@@ -25,7 +26,7 @@ export class AppComponent {
     this.servicesProductsService.getProducts(this.filter)
       .subscribe(
         (data) => {
-          console.log('success', data);
+          this.products = data.products;
         }, (err) => {
           console.log('error');
         });

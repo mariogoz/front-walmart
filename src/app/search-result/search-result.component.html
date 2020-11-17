@@ -1,18 +1,18 @@
 <div class="container">
     <p>Resultados para <strong>{{filter}}</strong></p>
     <div class="result-display">
-        <div class="card" *ngFor="let item of items | slice: (page-1) * pageSize : page * pageSize">
+        <div class="card" *ngFor="let product of products | slice: (page-1) * pageSize : page * pageSize">
             <div class="display-img">
                 <img class="img-product" alt="Lider Logo"
-                src="https://www.lider.cl/catalogo/images/electronicsIcon.svg">
+                src="{{product?.image}}">
             </div>
             <div class="detail">
-                <p><strong>labba</strong> Television 8K</p>
+                <p><strong>{{product?.brand}}</strong> {{product?.description}}</p>
                 <div>
-                    <p><strong>{{ item.current | currency:'CLP':'symbol-narrow':'1.0-0':'es-CL' }}</strong></p> <div>50%</div>
+                    <p><strong>{{ product?.sale | currency:'CLP':'symbol-narrow':'1.0-0':'es-CL' }}</strong></p> <div>50%</div>
                 </div>
                 
-                <p>{{ 500000 | currency:'CLP':'symbol-narrow':'1.0-0':'es-CL' }}</p>
+                <p>{{ product?.price | currency:'CLP':'symbol-narrow':'1.0-0':'es-CL' }}</p>
                 
             </div>
         </div>
@@ -20,6 +20,6 @@
     </div>
     <ngb-pagination [(page)]="page"
     [pageSize]="pageSize"
-    [collectionSize]="items.length"></ngb-pagination>
+    [collectionSize]="products?.length"></ngb-pagination>
 </div>
 
