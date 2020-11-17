@@ -1,0 +1,36 @@
+$padding-left-page: 15%;
+$padding-left-page: 15%;
+$color-walmart: #0879c9;
+
+.container {
+    width: 100%;
+}
+.header {
+    width: 100%;
+    background-color:$color-walmart;
+    .wrap-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: space-around;
+        padding-left: $padding-left-page;
+        padding-right: $padding-left-page;
+        .logo {
+            width: 15%;
+        }
+        .filter {
+            width: 50%;
+            .input-filter {
+                width: 85%;
+            }
+        }
+        .sign-in {
+            width: 10%;
+        }
+        .shopping-cart {
+            width: 10%;
+            display: inline-flex;
+        }
+    }
+}
+

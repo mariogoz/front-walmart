@@ -1,0 +1,19 @@
+.container {
+    .result-display {
+        display: flex;
+        .card {
+            width: 400px;
+            margin-left: 5px;
+            margin-right: 5px;
+            .display-img {
+                background-color: rgb(224, 219, 219);
+                width: 200;
+                text-align: center;
+                .img-product {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}

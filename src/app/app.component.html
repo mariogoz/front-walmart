@@ -1,0 +1,36 @@
+<section class="container">
+  <section class="header">
+    <div class="wrap-header">
+      <div class="logo"><a href="#"><img alt="Lider Logo"
+            src="https://www.lider.cl/supermercado/contentassets/img/icons/lider-logo.svg"> </a></div>
+
+      <div class="filter">
+        <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+          <input formControlName="inputFilter" class="input-filter" type="text" placeholder="¿QUE PRODUCTO BUSCAS HOY?">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+
+      <div class="sign-in">
+        <i class="fas fa-user"></i>
+        <i class="fas fa-angle-down"></i>
+      </div>
+
+      <div class="shopping-cart">
+        <i class="fas fa-shopping-cart"></i>
+        <div>0</div>
+      </div>
+    </div>
+  </section>
+  <section class="body">
+    <div>
+      <app-search-result [filter]="filter"></app-search-result>
+    </div>
+  </section>
+  <section class="footer">
+    <div class="legal-information">
+      <p class="button-information">Ver Informacion legal <i class="fas fa-angle-right"></i></p>
+    </div>
+  </section>
+</section>
+<router-outlet></router-outlet>
